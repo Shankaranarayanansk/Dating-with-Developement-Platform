@@ -4,7 +4,8 @@ import P1 from '../assets/Seniors/P1.jpg';
 import P2 from '../assets/Seniors/P2.jpg';
 import P3 from '../assets/Seniors/P3.jpeg';
 import P4 from '../assets/Seniors/P4.jpg';
-import P5 from '../assets/Seniors/P5.jpeg';
+// import P5 from '../assets/Seniors/P5.jpeg';
+import P5 from '../assets/Seniors/P5.jpg';
 import P6 from '../assets/Seniors/P6.png';
 
 const testimonials = [

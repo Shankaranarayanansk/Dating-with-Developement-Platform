@@ -1,7 +1,41 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiHome, FiUsers, FiTrendingUp, FiPhone } from 'react-icons/fi';
+import { FiHome, FiUsers, FiTrendingUp, FiPhone, FiMenu } from 'react-icons/fi';
 import Logo from '../assets/logo.png';
+import styled from 'styled-components';
+
+const NavLink = styled(Link)`
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #e5e7eb;
+        font-weight: bold;
+
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,96 +44,56 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50">
-      {/* Logo and Title */}
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <span className="text-white text-xl font-semibold">VSBEC Candidates</span>
+        <span className="text-white text-2xl font-bold">VSBEC Candidates</span>
       </div>
 
-      {/* Hamburger Menu for Mobile */}
-      <div className="block lg:hidden">
+      <div className="lg:hidden">
         <button
-          className="text-white focus:outline-none"
+          className="text-white focus:outline-none ;"
           onClick={toggleMenu}
         >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            )}
-          </svg>
+          <FiMenu className="h-6 w-6" />
         </button>
       </div>
 
-      {/* Navigation Links */}
-      <ul className={`lg:flex items-center space-x-8 ${isOpen ? 'block' : 'hidden'}`}>
+      <ul className={`lg:flex items-center space-x-8 ${isOpen ? 'block absolute top-full left-0 right-0 bg-black p-4' : 'hidden'} lg:relative lg:bg-transparent lg:p-0`}>
         <li>
-          <Link
-            to="/"
-            className="block lg:inline-block text-white hover:text-gray-200"
-            onClick={() => setIsOpen(false)} // Close menu on link click
-          >
+          <NavLink to="/" onClick={closeMenu}>
             <FiHome className="h-5 w-5 mr-1 inline" />
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
-            to="/alumni"
-            className="block lg:inline-block text-white hover:text-gray-200"
-            onClick={() => setIsOpen(false)} // Close menu on link click
-          >
+          <NavLink to="/alumni" onClick={closeMenu}>
             <FiUsers className="h-5 w-5 mr-1 inline" />
             Alumni
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
-            to="/trending"
-            className="block lg:inline-block text-white hover:text-gray-200"
-            onClick={() => setIsOpen(false)} // Close menu on link click
-          >
+          <NavLink to="/trending" onClick={closeMenu}>
             <FiTrendingUp className="h-5 w-5 mr-1 inline" />
             Trending
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
-            to="/seniors"
-            className="block lg:inline-block text-white hover:text-gray-200"
-            onClick={() => setIsOpen(false)} // Close menu on link click
-          >
+          <NavLink to="/seniors" onClick={closeMenu}>
             <FiUsers className="h-5 w-5 mr-1 inline" />
             Seniors
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
-            to="/contact"
-            className="block lg:inline-block text-white hover:text-gray-200"
-            onClick={() => setIsOpen(false)} // Close menu on link click
-          >
+          <NavLink to="/contact" onClick={closeMenu}>
             <FiPhone className="h-5 w-5 mr-1 inline" />
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

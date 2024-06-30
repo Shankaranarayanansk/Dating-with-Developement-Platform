@@ -1,12 +1,8 @@
 import React, { useRef } from "react";
 import Swal from "sweetalert2";
-import { GrMail } from "react-icons/gr";
-import { BsWhatsapp } from "react-icons/bs";
-
 const Contact = () => {
   const form = useRef();
-
-  const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -42,12 +38,17 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex justify-center items-center min-h-screen bg-white text-white">
+    <section className="flex flex-col justify-center items-center min-h-screen ml-10 bg-white text-white p-4">
+      <h1 className="bg-black text-white text-center py-4 px-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold rounded-md uppercase tracking-wider shadow-lg mb-6 w-full max-w-lg">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-2xl">
+          Feel Free to Ask
+        </span>
+      </h1>
       <div className="w-full max-w-lg bg-gray-200 rounded-lg p-4 shadow-lg md:p-6">
-        <h2 className="text-center text-3xl font-semibold mb-4 text-black">
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-4 text-black">
           Contact us
         </h2>
-        
+
         <div className="flex flex-col gap-6">
           <form
             ref={form}
@@ -85,7 +86,6 @@ const Contact = () => {
               Submit
             </button>
           </form>
-         
         </div>
       </div>
     </section>

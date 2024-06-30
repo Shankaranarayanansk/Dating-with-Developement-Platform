@@ -4,7 +4,7 @@ const Home = () => (
   <div className="lg:ml-48 p-4">
     <h1 className="text-4xl font-bold mb-4">Gear Up for <span className='text-6xl font-bold md-4'>Success</span>: Your Ultimate Preparation Hub!
     </h1>
-    <p className="text-lg text-gray-700 mb-4">Welcome to the resource page for juniors. Here you'll find a variety of materials and tools to help you with your studies and projects.</p>
+    <p className="text-lg text-gray-700 mb-4">Welcome juniors. Here you'll find a variety of materials and tools to help you with your studies and projects.You have the connection of well versed seniors help for you</p>
 
     <section className="mb-8">
       <h2 className="text-2xl font-semibold mb-2">Getting Started</h2>

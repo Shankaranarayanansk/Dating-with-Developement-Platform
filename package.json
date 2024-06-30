@@ -18,6 +18,7 @@
     "react-router-dom": "^6.24.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.11",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.12.1",
     "swiper": "^11.1.4"
