@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 p-1.5 lg:px-12 flex items-center justify-between">
+    <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50">
       {/* Logo and Title */}
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
@@ -57,7 +57,7 @@ const Navbar = () => {
             className="block lg:inline-block text-white hover:text-gray-200"
             onClick={() => setIsOpen(false)} // Close menu on link click
           >
-            <FiHome className="h-5 w-5 mr-1" />
+            <FiHome className="h-5 w-5 mr-1 inline" />
             Home
           </Link>
         </li>
@@ -67,7 +67,7 @@ const Navbar = () => {
             className="block lg:inline-block text-white hover:text-gray-200"
             onClick={() => setIsOpen(false)} // Close menu on link click
           >
-            <FiUsers className="h-5 w-5 mr-1" />
+            <FiUsers className="h-5 w-5 mr-1 inline" />
             Alumni
           </Link>
         </li>
@@ -77,7 +77,7 @@ const Navbar = () => {
             className="block lg:inline-block text-white hover:text-gray-200"
             onClick={() => setIsOpen(false)} // Close menu on link click
           >
-            <FiTrendingUp className="h-5 w-5 mr-1" />
+            <FiTrendingUp className="h-5 w-5 mr-1 inline" />
             Trending
           </Link>
         </li>
@@ -87,7 +87,7 @@ const Navbar = () => {
             className="block lg:inline-block text-white hover:text-gray-200"
             onClick={() => setIsOpen(false)} // Close menu on link click
           >
-            <FiUsers className="h-5 w-5 mr-1" />
+            <FiUsers className="h-5 w-5 mr-1 inline" />
             Seniors
           </Link>
         </li>
@@ -97,7 +97,7 @@ const Navbar = () => {
             className="block lg:inline-block text-white hover:text-gray-200"
             onClick={() => setIsOpen(false)} // Close menu on link click
           >
-            <FiPhone className="h-5 w-5 mr-1" />
+            <FiPhone className="h-5 w-5 mr-1 inline" />
             Contact
           </Link>
         </li>

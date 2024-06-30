@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiMenu } from 'react-icons/fi'; // Adjust icon as needed
+import { FiMenu } from 'react-icons/fi';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="bg-gray-200 w-25 min-h-screen p-2">
+    <aside className="bg-gray-200 w-30 min-h-screen p-1 fixed">
       {/* Hamburger Menu Button (Visible on Small Screens) */}
       <div className="flex justify-between items-center mb-4 lg:hidden">
         <button

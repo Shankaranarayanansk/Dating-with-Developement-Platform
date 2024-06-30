@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+}
+::-webkit-scrollbar {
+    width: 10px; /* width of the scrollbar track */
+  }
+  
+  /* Customize the scrollbar thumb (drag handle) */
+  ::-webkit-scrollbar-thumb {
+    background-color:#000000;
+    border-radius: 2px;
+  }
+  
+  /* Customize the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #00d5ff;
+  }
+  

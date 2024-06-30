@@ -10,7 +10,8 @@ import Contact from './Components/Contact';
 import WebDevelopment from './Pages/WebDev'; 
 import AppDevelopment from './Pages/AppDev';
 import ProblemSolving from './Pages/Problem';
-import Tech from './Pages/Undergraduate';;
+import Tech from './Pages/Undergraduate';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="/problem-solving" element={<ProblemSolving />} />
               <Route path="/tech" element={<Tech />} />
             </Routes>
+            <Footer />
           </main>
         </div>
       </div>
