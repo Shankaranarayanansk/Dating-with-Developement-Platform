@@ -13,7 +13,7 @@ const Trending = () => {
           throw new Error('Failed to fetch articles');
         }
         const data = await response.json();
-        setArticles(data.articles.slice(0, 4)); // Limit to 4 articles
+        setArticles(data.articles.slice(0, 10)); // Limit to 4 articles
         setLoading(false);
       } catch (error) {
         setError(error.message);

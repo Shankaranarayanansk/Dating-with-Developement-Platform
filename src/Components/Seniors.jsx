@@ -19,28 +19,28 @@ const testimonials = [
     image: P2,
     name: 'Shankaranarayananask',
     year: 'Final Year',
-    text: 'An Aspiring Developer and motivated student , who has mastering the web dev  bypassing traditional academic routes in favor of hands-on learning',
+    text: 'An Aspiring Developer and motivated student , who has mastering the MERN bypassing traditional academic routes in favor of hands-on learning',
     linkedin: 'https://www.linkedin.com/ragulpr'
   },
   {
     image: P3,
     name: 'Thulasidhara RV',
     year: 'Final Year',
-    text: 'I\'m grateful for the opportunities and connections I made during my time here. It\'s been crucial to my success.',
+    text: 'I\'m a problem solving Proficient solved 500+ problem using java and MySql in Leetcode and Hackerrank and currently i\' mastering the Data Structure and Algorithm.',
     linkedin: 'https://www.linkedin.com/prabhakard'
   },
   {
     image: P4,
     name: 'Irfan Ahamed',
     year: 'Final Year',
-    text: 'The experiences and knowledge I gained here have set a strong foundation for my professional journey.',
+    text: 'Hey there I\'m proficient in java and python and had solved more than 600 + problem using java and currenty learning the React for value driven progression',
     linkedin: 'https://www.linkedin.com/rahuls'
   },
   {
     image: P5,
     name: 'Sudarsana V',
     year: 'Final Year',
-    text: 'I\'m proud to be an alumini of this institution. The network and skills I developed here are priceless.',
+    text: 'Hello there I\'m passionate in about Frontend and Problem Solving using java and currenty learning the React for value',
     linkedin: 'https://www.linkedin.com/priyam'
   },
   {
