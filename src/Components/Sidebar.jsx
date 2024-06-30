@@ -84,7 +84,11 @@ const Sidebar = () => {
         <NavItem><NavLink to="/web-development" onClick={closeSidebar}>Web Development</NavLink></NavItem>
         <NavItem><NavLink to="/app-development" onClick={closeSidebar}>App Development</NavLink></NavItem>
         <NavItem><NavLink to="/problem-solving" onClick={closeSidebar}>Problem Solving</NavLink></NavItem>
-        <NavItem><NavLink to="/tech" onClick={closeSidebar}>Tech</NavLink></NavItem>
+        <NavItem><NavLink to="/Blockchain" onClick={closeSidebar}>Blockchain</NavLink></NavItem>
+        <NavItem><NavLink to="/Aptitude" onClick={closeSidebar}>Aptitude</NavLink></NavItem>
+        <NavItem><NavLink to="/Aiml" onClick={closeSidebar}>AI & ML & DL</NavLink></NavItem>
+        <NavItem><NavLink to="/Entrepreneur" onClick={closeSidebar}>Entrepreneur</NavLink></NavItem>
+        <NavItem><NavLink to="/tech" onClick={closeSidebar}>IT Knowledge</NavLink></NavItem>
       </NavList>
     </SidebarContainer>
   );

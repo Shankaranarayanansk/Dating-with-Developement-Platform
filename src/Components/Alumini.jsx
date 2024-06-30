@@ -3,6 +3,8 @@ import { FaLinkedin } from 'react-icons/fa';
 import P1 from '../assets/Alumini/P1.jpeg';
 import P2 from '../assets/Alumini/P2.jpeg';
 import P3 from '../assets/Alumini/P3.jpeg';
+import P4 from '../assets/Alumini/P4.jpeg';
+import P5 from '../assets/Alumini/P5.png'
 
 const testimonials = [
   {
@@ -22,21 +24,21 @@ const testimonials = [
   {
     image: P3,
     name: 'Avanthika',
-    year: 'Class of 2019',
+    year: '2024 Passed out',
     text: 'I\'m grateful for the opportunities and connections I made during my time here. It\'s been crucial to my success.',
     linkedin: 'https://www.linkedin.com/prabhakard'
   },
   {
-    image: '/path/to/alumini4.jpg',
-    name: 'Rahul S',
-    year: 'Class of 2021',
+    image: P4,
+    name: 'Gokul MP',
+    year: '2024 Passed Out',
     text: 'The experiences and knowledge I gained here have set a strong foundation for my professional journey.',
     linkedin: 'https://www.linkedin.com/rahuls'
   },
   {
-    image: '/path/to/alumini5.jpg',
-    name: 'Priya M',
-    year: 'Class of 2017',
+    image: P5,
+    name: 'Anish',
+    year: '2024 Passed Out',
     text: 'I\'m proud to be an alumini of this institution. The network and skills I developed here are priceless.',
     linkedin: 'https://www.linkedin.com/priyam'
   },

@@ -25,9 +25,9 @@ const testimonials = [
   },
   {
     image: P3,
-    name: 'Thulasidhara RV',
+    name: 'Harish Kumar',
     year: 'Final Year',
-    text: 'I\'m a problem solving Proficient solved 500+ problem using java and MySql in Leetcode and Hackerrank and currently i\' mastering the Data Structure and Algorithm.',
+    text: 'I\'m a Aspiring AI Developer and proficiency in Deep Learning and Machine Learning and Problem Solving at Leetcode by Java,Python,Pandas and Currently learning DSA',
     linkedin: 'https://www.linkedin.com/prabhakard'
   },
   {

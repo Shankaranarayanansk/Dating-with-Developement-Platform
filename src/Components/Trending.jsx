@@ -13,7 +13,7 @@ const Trending = () => {
           throw new Error('Failed to fetch articles');
         }
         const data = await response.json();
-        setArticles(data.articles.slice(0, 10)); // Limit to 4 articles
+        setArticles(data.articles.slice(0, 10)); // Limit to 10 articles
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -28,10 +28,10 @@ const Trending = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="container mx-auto p-2 lg:ml-64">
-      <h1 className="text-2xl font-bold mb-4">Trending</h1>
-      <p className="mb-4">Stay updated with the latest trends in technology.</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-2xl font-bold ml-20 mb-4">Trending</h1>
+      <p className="mb-4 ml-20 ">Stay updated with the latest trends in technology.</p>
+      <div className="grid grid-cols-1 ml-10 md:grid-cols-2 gap-6">
         {articles.map((article, index) => (
           <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden h-[400px] flex flex-col">
             <div className="h-48 overflow-hidden">
