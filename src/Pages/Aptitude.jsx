@@ -27,7 +27,7 @@ const Aptitude = () => (
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4">Quantitative Aptitude</h2>
           <iframe
-            width="560"
+            width="100%"
             height="315"
             src="https://www.youtube.com/embed/videoseries?si=VEldtgjbG2MQGLOJ&amp;list=PLjLhUHPsqNYkcq6YOfiywbTfnvf_TN7i9"
             title="YouTube video player"

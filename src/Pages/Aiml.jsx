@@ -110,7 +110,7 @@ const Aiml = () => (
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4">TensorFlow Tutorial</h2>
           <iframe
-            width="560"
+            width="100%"
             height="315"
             title="TensorFlow Tutorial"
             src="https://www.youtube.com/embed/tPYj3fFJGjk?si=ZQF6Ql4I53uZjI8J"
@@ -126,7 +126,7 @@ const Aiml = () => (
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4">PyTorch Tutorial</h2>
           <iframe
-            width="560"
+            width="100%"
             height="315"
             src="https://www.youtube.com/embed/V_xro1bcAuA?si=gQ0AIoHPKxZHyGMm"
             title="YouTube video player"
@@ -143,9 +143,9 @@ const Aiml = () => (
             Introduction of Open CV
           </h2>
           <iframe
-            width="560"
+            width="100%"
             height="315"
-            src="https://www.youtube.com/embed/x0AnCE9SE4A?si=QLAfE9qm9N1NnR_H"
+            src="https://www.youtube.com/embed/oXlwWbU8l2o?si=a5CDWWDu_P5ORyL2"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -160,13 +160,12 @@ const Aiml = () => (
           <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/6Y82bNa_6j8?si=J6XJz4Jmrw9Kmff7"
-            title="AI Project 2"
-            frameBorder="0"
+            src="https://www.youtube.com/embed/x0AnCE9SE4A?si=Y7UiY6GldkFG8iMP"
+            title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="rounded-lg"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -174,13 +173,12 @@ const Aiml = () => (
           <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/6Y82bNa_6j8?si=J6XJz4Jmrw9Kmff7"
-            title="AI Project 2"
-            frameBorder="0"
+            src="https://www.youtube.com/embed/videoseries?si=_sLQejX88AvVfbwz&amp;list=PLMoSUbG1Q_r8jFS04rot-3NzidnV54Z2q"
+            title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="rounded-lg"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -188,13 +186,12 @@ const Aiml = () => (
           <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/6Y82bNa_6j8?si=J6XJz4Jmrw9Kmff7"
-            title="AI Project 2"
-            frameBorder="0"
+            src="https://www.youtube.com/embed/dXxQ0LR-3Hg?si=WLm_kAM2WhLXUc_8"
+            title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="rounded-lg"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
       </div>
