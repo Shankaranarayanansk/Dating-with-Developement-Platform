@@ -51,7 +51,7 @@ const NavLink = styled(Link)`
   }
 
   &:hover {
-    color: black;
+    color: red;
     font-weight: bold;
   }
 

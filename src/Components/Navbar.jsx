@@ -26,8 +26,9 @@ const NavLink = styled(Link)`
   }
 
   &:hover {
-    color: #e5e7eb;
+    color: red;
         font-weight: bold;
+        
 
   }
 
@@ -52,7 +53,7 @@ const Navbar = () => {
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <span className="text-white text-2xl font-bold">VSBEC Candidates</span>
+        <span className="text-red-600 text-2xl font-bold "style={{ fontFamily: 'Poppins, sans-serif' }} >VSBEC Candidates</span>
       </div>
 
       <div className="lg:hidden">

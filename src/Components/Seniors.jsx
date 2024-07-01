@@ -14,42 +14,42 @@ const testimonials = [
     name: 'Sowmiya Dharshini',
     year: 'Final Year',
     text: 'An talented Student with 8.2 cgpa and proficient in Python and Problem solving ,App development and currently learning the Cyber Security  ',
-    linkedin: 'https://www.linkedin.com/pradhive'
+    linkedin: 'https://www.linkedin.com/in/sowmiya-dharshini-k-aa9534275/'
   },
   {
     image: P2,
     name: 'Shankaranarayananask',
     year: 'Final Year',
     text: 'An Aspiring Developer and motivated student , who has mastering the MERN bypassing traditional academic routes in favor of hands-on learning',
-    linkedin: 'https://www.linkedin.com/ragulpr'
+    linkedin: 'https://www.linkedin.com/in/shankaranarayanansk/'
   },
   {
     image: P3,
     name: 'Harish Kumar',
     year: 'Final Year',
     text: 'I\'m a Aspiring AI Developer and proficiency in Deep Learning and Machine Learning and Problem Solving at Leetcode by Java,Python,Pandas and Currently learning DSA',
-    linkedin: 'https://www.linkedin.com/prabhakard'
+    linkedin: 'https://www.linkedin.com/in/harizh/'
   },
   {
     image: P4,
     name: 'Irfan Ahamed',
     year: 'Final Year',
     text: 'Hey there I\'m proficient in java and python and had solved more than 600 + problem using java and currenty learning the React for value driven progression',
-    linkedin: 'https://www.linkedin.com/rahuls'
+    linkedin: 'https://www.linkedin.com/in/irfan-ahamed-s-b0a414255/'
   },
   {
     image: P5,
     name: 'Sudarsana V',
     year: 'Final Year',
-    text: 'Hello there I\'m passionate in about Frontend and Problem Solving using java and currenty learning the React for value',
-    linkedin: 'https://www.linkedin.com/priyam'
+    text: 'Hello there I\'m passionate in about Frontend and Problem Solving using java and currenty learning the MERN for flexible Development',
+    linkedin: 'https://www.linkedin.com/in/sudarshana-v/'
   },
   {
     image: P6,
     name: 'Siva V',
     year: 'Final Year',
     text: 'I\'m proud to be an alumini of this institution. The network and skills I developed here are priceless.',
-    linkedin: 'https://www.linkedin.com/priyam'
+    linkedin: 'https://www.linkedin.com/in/codersiva/'
   },
 ];
 
@@ -84,10 +84,10 @@ const Seniors = () => (
       </div>
 
       <div className="text-center mt-16">
-        <h2 className="text-2xl font-semibold mb-4">Join Our Alumini Network</h2>
-        <p className="mb-6">Stay connected with your alma mater and fellow graduates.</p>
+        <h2 className="text-2xl font-semibold mb-4">Join Our College Network</h2>
+        <p className="mb-6">Stay connected with your Seniors and fellow graduates.</p>
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-          Register Now
+          Click to Join Now
         </button>
       </div>
     </div>

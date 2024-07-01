@@ -5,6 +5,7 @@ import P2 from '../assets/Alumini/P2.jpeg';
 import P3 from '../assets/Alumini/P3.jpeg';
 import P4 from '../assets/Alumini/P4.jpeg';
 import P5 from '../assets/Alumini/P5.png'
+import P6 from '../assets/Alumini/P6.jpeg'
 
 const testimonials = [
   {
@@ -19,28 +20,35 @@ const testimonials = [
     name: 'Ragul PR',
     year: '2024 Passed Out',
     text: 'The supportive community and rigorous curriculum prepared me well for the challenges of the professional world.',
-    linkedin: 'https://www.linkedin.com/ragulpr'
+    linkedin: 'https://www.linkedin.com/in/ragul-pr/'
   },
   {
     image: P3,
     name: 'Avanthika',
     year: '2024 Passed out',
     text: 'I\'m grateful for the opportunities and connections I made during my time here. It\'s been crucial to my success.',
-    linkedin: 'https://www.linkedin.com/prabhakard'
+    linkedin: 'https://www.linkedin.com/in/avanthika2663/'
   },
   {
     image: P4,
     name: 'Gokul MP',
     year: '2024 Passed Out',
     text: 'The experiences and knowledge I gained here have set a strong foundation for my professional journey.',
-    linkedin: 'https://www.linkedin.com/rahuls'
+    linkedin: 'https://www.linkedin.com/in/gokul-m-p-289a56257/'
   },
   {
     image: P5,
     name: 'Anish',
     year: '2024 Passed Out',
     text: 'I\'m proud to be an alumini of this institution. The network and skills I developed here are priceless.',
-    linkedin: 'https://www.linkedin.com/priyam'
+    linkedin: 'https://www.linkedin.com/in/anish-anish/'
+  },
+  {
+    image: P6,
+    name: 'Muruganatham',
+    year: '2024 Passed Out',
+    text: 'I\'m proud to be an alumini of this institution. The network and skills I developed here are priceless.',
+    linkedin: 'https://www.linkedin.com/in/muruganantham-s/'
   },
 ];
 
@@ -75,10 +83,10 @@ const Alumini = () => (
       </div>
 
       <div className="text-center mt-16">
-        <h2 className="text-2xl font-semibold mb-4">Join Our Alumini Network</h2>
-        <p className="mb-6">Stay connected with your alma mater and fellow graduates.</p>
+        <h2 className="text-2xl font-semibold mb-4">Join Our College Network</h2>
+        <p className="mb-6">Stay connected with your Seniors and fellow graduates.</p>
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-          Register Now
+          Click to join Now
         </button>
       </div>
     </div>
