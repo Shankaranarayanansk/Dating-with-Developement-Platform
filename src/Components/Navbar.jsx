@@ -53,6 +53,7 @@ const Navbar = () => {
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
+        <p className='text-red-600'>VSBEC Candidates</p>
       </div>
 
       <div className="lg:hidden">

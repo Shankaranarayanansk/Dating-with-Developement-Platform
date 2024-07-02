@@ -67,7 +67,6 @@ const ProblemSolving = () => (
               height="315"
               src={resource.src}
               title={resource.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
