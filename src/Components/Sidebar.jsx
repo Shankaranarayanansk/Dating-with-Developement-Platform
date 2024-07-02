@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -9,8 +9,12 @@ const SidebarContainer = styled.aside`
   padding: 0.25rem;
   position: fixed;
   transition: all 0.3s;
-  width: ${props => props.isOpen ? '7.5rem' : '3rem'};
+  width: ${props => props.isOpen ? '12rem' : '3rem'};
   border-right: 9px solid black;
+
+  @media (min-width: 768px) {
+    width: ${props => props.isOpen ? '7.5rem' : '3rem'};
+  }
 `;
 
 const MenuButton = styled.button`
@@ -61,8 +65,9 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -72,25 +77,40 @@ const Sidebar = () => {
     setIsOpen(false);
   };
 
-  return (
-    <SidebarContainer isOpen={isOpen}>
-      <div>
-        <MenuButton onClick={toggleSidebar}>
-          <FiMenu size={24} />
-        </MenuButton>
-      </div>
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
 
-      <NavList isOpen={isOpen}>
-        <NavItem><NavLink to="/web-development" onClick={closeSidebar}>Web Development</NavLink></NavItem>
-        <NavItem><NavLink to="/app-development" onClick={closeSidebar}>App Development</NavLink></NavItem>
-        <NavItem><NavLink to="/problem-solving" onClick={closeSidebar}>Problem Solving</NavLink></NavItem>
-        <NavItem><NavLink to="/Blockchain" onClick={closeSidebar}>Blockchain</NavLink></NavItem>
-        <NavItem><NavLink to="/Aptitude" onClick={closeSidebar}>Aptitude</NavLink></NavItem>
-        <NavItem><NavLink to="/Aiml" onClick={closeSidebar}>AI & ML & DL</NavLink></NavItem>
-        <NavItem><NavLink to="/Entrepreneur" onClick={closeSidebar}>Entrepreneur</NavLink></NavItem>
-        <NavItem><NavLink to="/tech" onClick={closeSidebar}>IT Knowledge</NavLink></NavItem>
-      </NavList>
-    </SidebarContainer>
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <>
+      <SidebarContainer isOpen={isOpen}>
+        <div>
+          <MenuButton onClick={toggleSidebar}>
+            <FiMenu size={24} />
+          </MenuButton>
+        </div>
+        <NavList isOpen={isOpen}>
+          <NavItem><NavLink to="/web-development" onClick={closeSidebar}>Web Development</NavLink></NavItem>
+          <NavItem><NavLink to="/app-development" onClick={closeSidebar}>App Development</NavLink></NavItem>
+          <NavItem><NavLink to="/problem-solving" onClick={closeSidebar}>Problem Solving</NavLink></NavItem>
+          <NavItem><NavLink to="/Blockchain" onClick={closeSidebar}>Blockchain</NavLink></NavItem>
+          <NavItem><NavLink to="/Aptitude" onClick={closeSidebar}>Aptitude</NavLink></NavItem>
+          <NavItem><NavLink to="/Aiml" onClick={closeSidebar}>AI & ML & DL</NavLink></NavItem>
+          <NavItem><NavLink to="/Entrepreneur" onClick={closeSidebar}>Entrepreneur</NavLink></NavItem>
+          <NavItem><NavLink to="/tech" onClick={closeSidebar}>IT Knowledge</NavLink></NavItem>
+        </NavList>
+      </SidebarContainer>
+      <main style={{ marginLeft: isOpen && !isMobile ? '7.5rem' : '3rem', transition: 'margin-left 0.3s' }}>
+        {children}
+      </main>
+    </>
   );
 };
 
