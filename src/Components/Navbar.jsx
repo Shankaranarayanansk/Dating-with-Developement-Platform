@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiHome, FiUsers, FiTrendingUp, FiPhone, FiMenu } from 'react-icons/fi';
-import Logo from '../assets/logo.png';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiHome, FiUsers, FiTrendingUp, FiPhone, FiMenu } from "react-icons/fi";
+import Logo from "../assets/logo.png";
+import styled from "styled-components";
 
 const NavLink = styled(Link)`
   position: relative;
@@ -13,7 +13,7 @@ const NavLink = styled(Link)`
   transition: color 0.3s ease;
 
   &::after {
-    content: '';
+    content: "________";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -27,9 +27,7 @@ const NavLink = styled(Link)`
 
   &:hover {
     color: red;
-        font-weight: bold;
-        
-
+    font-weight: bold;
   }
 
   &:hover::after {
@@ -50,10 +48,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50">
+    <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <p className='text-red-600'>VSBEC Candidates</p>
+        <p className="text-red-600 font-bold p-2" >
+          VSBEC Candidates
+        </p>
       </div>
 
       <div className="lg:hidden">
@@ -65,8 +65,14 @@ const Navbar = () => {
         </button>
       </div>
 
-      <ul className={`lg:flex items-center space-x-8 ${isOpen ? 'block absolute top-full left-0 right-0 bg-black p-4' : 'hidden'} lg:relative lg:bg-transparent lg:p-0`}>
-        <li>
+      <ul
+        className={`lg:flex items-center space-x-8 ${
+          isOpen
+            ? "block absolute top-full left-0 right-0 bg-black p-4"
+            : "hidden"
+        } lg:relative lg:bg-transparent lg:p-0`}
+      >
+        <li className="font-bold">
           <NavLink to="/" onClick={closeMenu}>
             <FiHome className="h-5 w-5 mr-1 inline" />
             Home
