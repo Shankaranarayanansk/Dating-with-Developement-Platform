@@ -15,7 +15,7 @@ const Home = () => {
           <img src={Hero} alt="Image" className="rounded-lg shadow-md" />
         </div>
         <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-4 md:mb-0" data-aos="fade-right" data-aos-duration="1500">
-          <h1 className="text-4xl font-bold mb-4">Gear Up for <span className='text-6xl text-red-600 font-bold md:4'>Success</span>: Your Ultimate Preparation Hub!</h1>
+          <h1 className="text-4xl font-bold mb-4">Gear Up for <span className='text-4xl text-red-600 font-bold md:4'>Success</span>: Your Ultimate Preparation Hub!</h1>
           <p className="text-lg text-gray-700 mb-4">Welcome juniors. Here you'll find a variety of materials and tools to help you with your studies and projects.</p>
         </div>
       </div>

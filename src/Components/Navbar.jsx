@@ -13,7 +13,7 @@ const NavLink = styled(Link)`
   transition: color 0.3s ease;
 
   &::after {
-    content: "________";
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -51,7 +51,7 @@ const Navbar = () => {
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <p className="text-red-600 font-bold p-2" >
+        <p className="text-red-600 text-2xl font-bold p-2 m-29" >
           VSBEC Candidates
         </p>
       </div>
@@ -72,9 +72,9 @@ const Navbar = () => {
             : "hidden"
         } lg:relative lg:bg-transparent lg:p-0`}
       >
-        <li className="font-bold">
+        <li >
           <NavLink to="/" onClick={closeMenu}>
-            <FiHome className="h-5 w-5 mr-1 inline" />
+            <FiHome className="h-5 w-5 ml-30 inline" />
             Home
           </NavLink>
         </li>

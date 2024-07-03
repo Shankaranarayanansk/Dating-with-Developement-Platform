@@ -77,7 +77,6 @@ const WebDevelopment = () => (
               height="315"
               src={resource.src}
               title={resource.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
