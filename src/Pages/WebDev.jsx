@@ -104,11 +104,7 @@ const WebDevelopment = () => {
                   <ReactLoading type="spin" color="#36D7B7" height={50} width={50} />
                 </div>
               )}
-              {timeoutStates[index] && (
-                <div className="flex justify-center items-center h-80 text-red-500">
-                  <p>Loading is taking longer than expected...</p>
-                </div>
-              )}
+              
               <iframe
                 width="100%"
                 height="315"
