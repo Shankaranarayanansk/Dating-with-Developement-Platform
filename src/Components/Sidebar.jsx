@@ -19,12 +19,12 @@ const SidebarContainer = styled.aside`
   padding: 0.25rem;
   position: fixed;
   transition: all 0.3s;
-  width: ${props => props.isOpen ? '12rem' : '3rem'};
+  width: ${props => props.isOpen ? '50rem' : '2.5rem'};
   border-right: 9px solid black;
   overflow-y: auto; /* Enables vertical scrolling */
-
+  
   @media (min-width: 768px) {
-    width: ${props => props.isOpen ? '7.5rem' : '3rem'};
+    width: ${props => props.isOpen ? '10rem' : '4rem'};
   }
 `;
 
@@ -32,6 +32,7 @@ const MenuButton = styled.button`
   color: #4b5563;
   &:focus {
     outline: none;
+    
   }
 `;
 
@@ -63,7 +64,7 @@ const NavLink = styled(Link)`
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
-  }
+   }
 
   &:hover {
     color: red;
@@ -101,13 +102,13 @@ const Sidebar = ({ children }) => {
 
   return (
     <>
-      <SidebarContainer isOpen={isOpen}>
+      <SidebarContainer isOpen={isOpen} >
         <div>
           <MenuButton onClick={toggleSidebar}>
             <FiMenu size={24} />
           </MenuButton>
         </div>
-        <NavList isOpen={isOpen}>
+        <NavList isOpen={isOpen} className='font-poppins font-semibold'>
           <NavItem><NavLink to="/web-development" onClick={closeSidebar}><FaHtml5 className='h-5 w-5 mr-1 inline'/>Web Development</NavLink></NavItem>
           <NavItem><NavLink to="/app-development" onClick={closeSidebar}><SiFlutter className='h-5 w-5 mr-1 inline'/>
           App Development</NavLink></NavItem>
@@ -118,11 +119,14 @@ const Sidebar = ({ children }) => {
           <NavItem><NavLink to="/aptitude" onClick={closeSidebar}><TbMathSymbols className='h-5 w-5 mr-1 inline'/>
           Aptitude</NavLink></NavItem>
           <NavItem><NavLink to="/aiml" onClick={closeSidebar}><RiRobot3Fill className='mr-1 h-5 w-5 inline' />
-          AI & ML & DL</NavLink></NavItem>
+          AIML & DL</NavLink></NavItem>
           <NavItem><NavLink to="/entrepreneur" onClick={closeSidebar}><MdOutlineLeaderboard className='mr-1 h-5 w-5 inline'/>
           Entrepreneur</NavLink></NavItem>
           <NavItem><NavLink to="/tech" onClick={closeSidebar}><IoIosPeople  className='mr-1 h-5 w-5 inline' />
           Communication</NavLink></NavItem>
+          <NavItem><NavLink to="/tech" onClick={closeSidebar}><FaComputer  className='mr-1 h-5 w-5 inline' />
+          CS Subjects</NavLink></NavItem>
+          
         </NavList>
       </SidebarContainer>
       <main style={{ marginLeft: isOpen && !isMobile ? '9.5rem' : '3rem', transition: 'margin-left 0.3s' }}>

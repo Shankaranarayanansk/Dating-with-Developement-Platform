@@ -15,7 +15,7 @@ import Footer from './Components/Footer';
 import Aiml from './Pages/Aiml';
 import Blockchain from './Pages/Blockchain';
 import Aptitude from './Pages/Aptitude';
-// import Entrepreneur from './Pages/Entrepreneur';
+import Entrepreneur from './Pages/Entrepreneur';
 import Bot from './Components/Bot';
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
               <Route path="/Aiml" element={<Aiml/>} />
               <Route path="/Blockchain" element={<Blockchain/>} />
               <Route path="/Aptitude" element={<Aptitude/>} />
-              {/* <Route path="/Entrepreneur" element={<Entrepreneur/>} /> */}
+              <Route path="/Entrepreneur" element={<Entrepreneur/>} />
               <Route path="/tech" element={<Tech />} />
             </Routes>
             <Footer />
