@@ -51,8 +51,8 @@ const Navbar = () => {
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50 rounded-b-lg font-poppins font-bold">
       <div className="flex items-center space-x-8">
         <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <p className="text-red-600 text-2xl font-bold p-2 m-29" >
-          VSBEC Candidates
+        <p className="text-yellow-600 text-2xl  p-2 m-29 font-poppins font-bold " >
+          Learn <span className="">H</span>ub
         </p>
       </div>
 
@@ -73,8 +73,8 @@ const Navbar = () => {
         } lg:relative lg:bg-transparent lg:p-0`}
       >
         <li >
-          <NavLink to="/" onClick={closeMenu}>
-            <FiHome className="h-5 w-5 ml-30 inline" />
+          <NavLink to="/" onClick={closeMenu} className="ml-8">
+            <FiHome className="h-5 w-5 mr-1 inline" />
             Home
           </NavLink>
         </li>
