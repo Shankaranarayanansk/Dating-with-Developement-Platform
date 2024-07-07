@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactLoading from 'react-loading';
 
 const resources = [
   {
@@ -51,30 +52,68 @@ const resources = [
   },
 ];
 
-const Aiml = () => (
-  <div className="bg-gray-100 min-h-screen py-12">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-center mb-8">AI/ML Resources</h1>
+const Aiml = () => {
+  const [loadingStates, setLoadingStates] = useState(
+    new Array(resources.length).fill(true)
+  );
+  const [timeoutStates, setTimeoutStates] = useState(
+    new Array(resources.length).fill(false)
+  );
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {resources.map((resource, index) => (
-          <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-4">{resource.title}</h2>
-            <iframe
-              width="100%"
-              height="315"
-              src={resource.src}
-              title={resource.title}
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="rounded-lg"
-            ></iframe>
-          </div>
-        ))}
+  const handleLoad = (index) => {
+    const newLoadingStates = [...loadingStates];
+    newLoadingStates[index] = false;
+    setLoadingStates(newLoadingStates);
+  };
+
+  useEffect(() => {
+    const timers = resources.map((_, index) => 
+      setTimeout(() => {
+        const newTimeoutStates = [...timeoutStates];
+        newTimeoutStates[index] = true;
+        setTimeoutStates(newTimeoutStates);
+      }, 40000)
+    );
+
+    // Clean up the timers
+    return () => timers.forEach(timer => clearTimeout(timer));
+  }, []);
+
+  return (
+    <div className="bg-gray-100 min-h-screen py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-center mb-8">AI/ML Resources</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {resources.map((resource, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+              <h2 className="text-xl font-semibold mb-4">{resource.title}</h2>
+              {loadingStates[index] && !timeoutStates[index] && (
+                <div className="flex justify-center items-center h-80">
+                  <ReactLoading type="spin" color="#36D7B7" height={50} width={50} />
+                </div>
+              )}
+              {timeoutStates[index] && (
+                <div className="flex justify-center items-center h-80 text-red-500">
+                  <p>Loading is taking longer than expected...</p>
+                </div>
+              )}
+              <iframe
+                width="100%"
+                height="315"
+                src={resource.src}
+                title={resource.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className={`rounded-lg ${loadingStates[index] ? 'hidden' : ''}`}
+                onLoad={() => handleLoad(index)}
+              ></iframe>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Aiml;

@@ -1,80 +1,10 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-
-// const Entrepreneur = () => {
-//   const [videoData, setVideoData] = useState([]);
-//   const API_KEY = 'AIzaSyD1YxyeDvK23rTBbCgNofFyvVoy8y0cs20';
-//   const CHANNEL_IDS = [
-//      '@siddahmed', 
-//     '@Blacksheepgoofficial',
-//     '@HOUSEOFMAVERICK',
-//     '@theRahulM',
-//   ];
-
-//   useEffect(() => {
-//     const fetchVideos = async () => {
-//       try {
-//         const videoPromises = CHANNEL_IDS.map(channelId =>
-//           axios.get(`https://www.googleapis.com/youtube/v3/search`, {
-//             params: {
-//               part: 'snippet',
-//               channelId: channelId,
-//               maxResults: 6,
-//               order: 'date',
-//               type: 'video',
-//               key: API_KEY,
-//             }
-//           }).then(response => response.data.items.map(item => ({
-//             title: item.snippet.title,
-//             src: `https://www.youtube.com/embed/${item.id.videoId}`
-//           })))
-//         );
-
-//         const videoResults = await Promise.all(videoPromises);
-//         const allVideos = videoResults.flat();
-//         setVideoData(allVideos);
-//       } catch (error) {
-//         console.error('Error fetching video data:', error);
-//       }
-//     };
-
-//     fetchVideos();
-//   }, [API_KEY, CHANNEL_IDS]);
-
-//   return (
-//     <div className="bg-gray-100 min-h-screen py-12">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <h1 className="text-3xl font-bold text-center mb-8">IT Tech Resources</h1>
-
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//           {videoData.map((video, index) => (
-//             <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-//               <h2 className="text-xl font-semibold mb-4">{video.title}</h2>
-//               <iframe
-//                 width="100%"
-//                 height="315"
-//                 src={video.src}
-//                 title={video.title}
-//                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-//                 referrerPolicy="strict-origin-when-cross-origin"
-//                 allowFullScreen
-//                 className="rounded-lg"
-//               ></iframe>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Entrepreneur;
-
-
 import React, { useEffect, useState } from 'react';
+import ReactLoading from 'react-loading';
 
 const Entrepreneur = () => {
   const [videoData, setVideoData] = useState([]);
+  const [loadingStates, setLoadingStates] = useState([]);
+  const [timeoutStates, setTimeoutStates] = useState([]);
   const API_KEY = 'AIzaSyD1YxyeDvK23rTBbCgNofFyvVoy8y0cs20';
   const CHANNEL_HANDLE = '@HOUSEOFMAVERICK'; 
 
@@ -104,6 +34,8 @@ const Entrepreneur = () => {
           src: `https://www.youtube.com/embed/${item.id.videoId}`
         }));
         setVideoData(videos);
+        setLoadingStates(new Array(videos.length).fill(true));
+        setTimeoutStates(new Array(videos.length).fill(false));
       } catch (error) {
         console.error('Error fetching video data:', error);
       }
@@ -111,6 +43,26 @@ const Entrepreneur = () => {
 
     fetchChannelId().then(fetchVideos).catch(error => console.error('Error in fetching process:', error));
   }, [API_KEY, CHANNEL_HANDLE]);
+
+  useEffect(() => {
+    const timers = videoData.map((_, index) => 
+      setTimeout(() => {
+        const newTimeoutStates = [...timeoutStates];
+        newTimeoutStates[index] = true;
+        setTimeoutStates(newTimeoutStates);
+      }, 40000) // 40 seconds timeout
+    );
+
+    return () => {
+      timers.forEach(timer => clearTimeout(timer));
+    };
+  }, [videoData]);
+
+  const handleLoad = (index) => {
+    const newLoadingStates = [...loadingStates];
+    newLoadingStates[index] = false;
+    setLoadingStates(newLoadingStates);
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen py-12">
@@ -121,11 +73,22 @@ const Entrepreneur = () => {
           {videoData.map((video, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">{video.title}</h2>
+              {loadingStates[index] && !timeoutStates[index] && (
+                <div className="flex justify-center items-center h-80">
+                  <ReactLoading type="spin" color="#36D7B7" height={50} width={50} />
+                </div>
+              )}
+              {timeoutStates[index] && (
+                <div className="flex justify-center items-center h-80 text-red-500">
+                  <p>Loading is taking longer than expected...</p>
+                </div>
+              )}
               <iframe
                 width="100%"
                 height="315"
                 src={video.src}
                 title={video.title}
+                onLoad={() => handleLoad(index)}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen

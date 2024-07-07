@@ -18,7 +18,7 @@ const SidebarContainer = styled.aside`
   height: 100vh; /* Full viewport height */
   padding: 0.25rem;
   position: fixed;
-  transition: all 0.3s;
+  transition: all 1s;
   width: ${props => props.isOpen ? '50rem' : '2.5rem'};
   border-right: 9px solid black;
   overflow-y: auto; /* Enables vertical scrolling */
@@ -51,7 +51,7 @@ const NavLink = styled(Link)`
   padding: 5px 0;
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 1s ease;
 
   &::after {
     content: '';
@@ -63,7 +63,7 @@ const NavLink = styled(Link)`
     background-color: black;
     transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease;
+    transition: transform 1s ease;
    }
 
   &:hover {

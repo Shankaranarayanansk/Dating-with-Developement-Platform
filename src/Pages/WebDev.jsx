@@ -84,10 +84,10 @@ const WebDevelopment = () => {
         const newTimeoutStates = [...timeoutStates];
         newTimeoutStates[index] = true;
         setTimeoutStates(newTimeoutStates);
-      }, 10000) // 10 seconds timeout
+      }, 40000) // 10 seconds timeout pannurathuku l
     );
 
-    // Cleanup timeouts if component unmounts
+    // Clean the loder effect la
     return () => timers.forEach(timer => clearTimeout(timer));
   }, []);
 
@@ -104,7 +104,11 @@ const WebDevelopment = () => {
                   <ReactLoading type="spin" color="#36D7B7" height={50} width={50} />
                 </div>
               )}
-              
+              {timeoutStates[index] && (
+                // <div className="flex justify-center items-center h-80 text-red-500">
+                  <p>Loading is taking longer than expected...</p>
+                // </div>
+              )}
               <iframe
                 width="100%"
                 height="315"
