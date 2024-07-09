@@ -1,85 +1,68 @@
-import React, { useEffect, useState } from "react";
-import { ClipLoader } from "react-spinners";
-import ReactLoading from "react-loading";
+import React, { useEffect, useState } from 'react';
 
-const Trending = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const Undergraduate = () => {
+  const [videoData, setVideoData] = useState([]);
+  const API_KEY = 'AIzaSyD1YxyeDvK23rTBbCgNofFyvVoy8y0cs20';
+  const CHANNEL_HANDLE = '@GoogleStudents'; 
 
   useEffect(() => {
-    const fetchTrendingArticles = async () => {
+    const fetchChannelId = async () => {
       try {
-        const response = await fetch(
-          "https://newsapi.org/v2/everything?q=IT&apiKey=bdec419fc147404ca876a88be151951e"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch articles");
-        }
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${CHANNEL_HANDLE}&type=channel&key=${API_KEY}`);
         const data = await response.json();
-        setArticles(data.articles.slice(0, 10)); // Limit to 10 articles
-        setLoading(false);
+        if (data.items && data.items.length > 0) {
+          return data.items[0].id.channelId;
+        } else {
+          console.error('Channel not found');
+        }
       } catch (error) {
-        setError(error.message);
-        setLoading(false);
+        console.error('Error fetching channel ID:', error);
+      }
+      return null;
+    };
+
+    const fetchVideos = async (channelId) => {
+      if (!channelId) return;
+      try {
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=12&order=date&type=video&key=${API_KEY}`);
+        const data = await response.json();
+        const videos = data.items.map(item => ({
+          title: item.snippet.title,
+          src: `https://www.youtube.com/embed/${item.id.videoId}`
+        }));
+        setVideoData(videos);
+      } catch (error) {
+        console.error('Error fetching video data:', error);
       }
     };
 
-    fetchTrendingArticles();
-  }, []);
-
-  if (loading)
-    return (
-      <p className="flex justify-center items-center h-screen">
-        {/* <ClipLoader size={85} color={""} loading={true} /> */}
-        <ReactLoading type={"bars"} color={"#FF0000"} height={80} width={80} />
-
-      </p>
-    );
-  if (error) return <p>Error: {error}</p>;
+    fetchChannelId().then(fetchVideos).catch(error => console.error('Error in fetching process:', error));
+  }, [API_KEY, CHANNEL_HANDLE]);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-2xl font-bold ml-20 mb-4">Trending</h1>
-      <p className="mb-4 ml-20 ">
-        Stay updated with the latest trends in technology.
-      </p>
-      <div className="grid grid-cols-1 ml-10 md:grid-cols-2 gap-6">
-        {articles.map((article, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden h-[400px] flex flex-col"
-          >
-            <div className="h-48 overflow-hidden">
-              {article.urlToImage && (
-                <img
-                  src={article.urlToImage}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                />
-              )}
+    <div className="bg-gray-100 min-h-screen py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl text-red-500font-bold text-center mb-8">Google Trends</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {videoData.map((video, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+              <h2 className="text-xl font-semibold mb-4">{video.title}</h2>
+              <iframe
+                width="100%"
+                height="175"
+                src={video.src}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
             </div>
-            <div className="p-4 flex flex-col flex-grow">
-              <h2 className="text-xl font-semibold mb-2 line-clamp-2">
-                {article.title}
-              </h2>
-              <p className="text-gray-600 mb-4 flex-grow overflow-hidden line-clamp-3">
-                {article.description}
-              </p>
-              <a
-                href={article.url}
-                className="text-blue-500 hover:underline mt-auto"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read more
-              </a>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 };
-
-export default Trending;
+export default Undergraduate;

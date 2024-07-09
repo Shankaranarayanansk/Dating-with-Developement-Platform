@@ -9,7 +9,7 @@ import P4 from '../assets/Alumini/P4.jpeg';
 import P5 from '../assets/Alumini/P5.png';
 import P6 from '../assets/Alumini/P6.jpeg';
 
-const testimonials = [
+const fellows = [
   {
     image: P1,
     name: 'Pradhive',
@@ -54,7 +54,7 @@ const testimonials = [
   },
 ];
 
-const Testimonial = ({ image, name, year, text, linkedin }) => (
+const Guys = ({ image, name, year, text, linkedin }) => (
   <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6" data-aos="fade-up">
     <img src={image} alt={name} className="w-24 h-24 rounded-full mb-4 object-cover" />
     <p className="text-gray-600 mb-4 text-sm text-center h-24 overflow-hidden">{text}</p>
@@ -77,14 +77,14 @@ const Alumini = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen lg:ml-40">
+    <div className="main-content bg-gray-100 min-h-screen lg:ml-40">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Alumini</h1>
         <p className="text-center mb-12 text-gray-600">Hear from our successful graduates about their experiences.</p>
         <div className="overflow-hidden">
           <div className="flex flex-wrap justify-center">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} {...testimonial} />
+            {fellows.map((bros, index) => (
+              <Guys key={index} {...bros} />
             ))}
           </div>
         </div>

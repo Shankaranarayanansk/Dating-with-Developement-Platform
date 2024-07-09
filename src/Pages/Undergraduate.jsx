@@ -1,65 +1,93 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { FaYoutube } from 'react-icons/fa';
+import P1 from '../assets/Tech/P1.jpg';
+import P2 from '../assets/Tech/P2.jpg';
+import P3 from '../assets/Tech/P3.jpg';
+import P4 from '../assets/Tech/P4.jpg';
+import P5 from '../assets/Tech/P5.jpg';
+import P6 from '../assets/Tech/P6.jpg';
+// import '../App.css';
+
+const testimonials = [
+  {
+    image: P1,
+    name: 'Curios Freaks',
+    year: 'An IT Corporate',
+    text: 'A Software Engineer working at top tech, trying to post everything that I learn and which I feel will help people grow!!!',
+    linkedin: 'https://www.linkedin.com/in/pradhive/',
+  },
+  {
+    image: P2,
+    name: 'HOUSE OF MAVERICK',
+    year: 'Digital Marketing',
+    text: 'Providing information on current updates and producing valuable content for adults.',
+    linkedin: 'https://www.youtube.com/@HOUSEOFMAVERICK',
+  },
+  {
+    image: P3,
+    name: 'Rahul M',
+    year: 'Entrepreneur',
+    text: "Hi there, I'm Rahul, a former software engineer and a creator turned entrepreneur. I'm passionate about empowering and mentoring.",
+    linkedin: 'https://www.linkedin.com/in/avanthika2663/',
+  },
+  {
+    image: P4,
+    name: 'A2d Gaming',
+    year: 'Ex-Gaming Developer',
+    text: 'An experienced and knowledgeable person delivering content about hardware, software, and IT companies.',
+    linkedin: 'https://www.linkedin.com/in/gokul-m-p-289a56257/',
+  },
+  {
+    image: P5,
+    name: 'Google Students',
+    year: 'Google Working Professionals',
+    text: "I'm proud to be an alumna of this institution. The network and skills I developed here are priceless.",
+    linkedin: 'https://www.linkedin.com/in/anish-anish/',
+  },
+  {
+    image: P6,
+    name: 'Ted Talks',
+    year: 'Attractive Speech',
+    text: "I'm proud to be an alumna of this institution. The network and skills I developed here are priceless.",
+    linkedin: 'https://www.linkedin.com/in/muruganantham-s/',
+  },
+];
+
+const Testimonial = ({ image, name, year, text, linkedin }) => (
+  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6" >
+    <img src={image} alt={name} className="w-24 h-24 rounded-full mb-4 object-cover" />
+    <p className="text-gray-600 mb-4 text-sm text-center h-24 overflow-hidden">{text}</p>
+    <h3 className="font-bold text-lg">{name}</h3>
+    <p className="text-sm text-gray-500">{year}</p>
+    <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-2 text-red-500 hover:text-red-600 flex items-center">
+      <FaYoutube size={24} className="mr-2" />
+      Follow
+    </a>
+  </div>
+);
 
 const Undergraduate = () => {
-  const [videoData, setVideoData] = useState([]);
-  const API_KEY = 'AIzaSyD1YxyeDvK23rTBbCgNofFyvVoy8y0cs20';
-  const CHANNEL_HANDLE = '@TED'; 
-
   useEffect(() => {
-    const fetchChannelId = async () => {
-      try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${CHANNEL_HANDLE}&type=channel&key=${API_KEY}`);
-        const data = await response.json();
-        if (data.items && data.items.length > 0) {
-          return data.items[0].id.channelId;
-        } else {
-          console.error('Channel not found');
-        }
-      } catch (error) {
-        console.error('Error fetching channel ID:', error);
-      }
-      return null;
-    };
-
-    const fetchVideos = async (channelId) => {
-      if (!channelId) return;
-      try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&type=video&key=${API_KEY}`);
-        const data = await response.json();
-        const videos = data.items.map(item => ({
-          title: item.snippet.title,
-          src: `https://www.youtube.com/embed/${item.id.videoId}`
-        }));
-        setVideoData(videos);
-      } catch (error) {
-        console.error('Error fetching video data:', error);
-      }
-    };
-
-    fetchChannelId().then(fetchVideos).catch(error => console.error('Error in fetching process:', error));
-  }, [API_KEY, CHANNEL_HANDLE]);
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-center mb-8">Communicational Development Resources</h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {videoData.map((video, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <h2 className="text-xl font-semibold mb-4">{video.title}</h2>
-              <iframe
-                width="100%"
-                height="315"
-                src={video.src}
-                title={video.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="rounded-lg"
-              ></iframe>
-            </div>
-          ))}
+    <div className="main-content bg-gray-100 min-h-screen lg:ml-40">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Life Skills</h1>
+        <p className="text-center mb-12 text-gray-600">Have tips and motivation from these YouTubers</p>
+        <div className="overflow-hidden">
+          <div className="flex flex-wrap justify-center">
+            {testimonials.map((testimonial, index) => (
+              <Testimonial key={index} {...testimonial} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -67,3 +95,5 @@ const Undergraduate = () => {
 };
 
 export default Undergraduate;
+
+

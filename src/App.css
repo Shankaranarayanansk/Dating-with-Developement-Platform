@@ -1,1 +1,12 @@
 
+/* Add this to your CSS file */
+
+.sidebar {
+    z-index: 1000; /* Higher z-index to ensure it appears above the main content */
+  }
+  
+  .main-content {
+    z-index: 1; /* Lower z-index to ensure it stays below the sidebar */
+    margin-left: 250px; /* Adjust this value based on your sidebar width */
+  }
+  

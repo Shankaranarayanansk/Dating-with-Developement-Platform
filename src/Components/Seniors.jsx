@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 import { FaLinkedin } from 'react-icons/fa';
 import P1 from '../assets/Seniors/P1.jpg';
 import P2 from '../assets/Seniors/P2.jpg';
@@ -9,7 +9,7 @@ import P4 from '../assets/Seniors/P4.jpg';
 import P5 from '../assets/Seniors/P5.jpg';
 import P6 from '../assets/Seniors/P6.png';
 
-const testimonials = [
+const fellows = [
   {
     image: P1,
     name: 'Sowmiya Dharshini',
@@ -38,13 +38,13 @@ const testimonials = [
     text: "Hey there! I'm proficient in Java and Python, and have solved more than 600+ problems using Java. Currently learning React for value-driven progression",
     linkedin: 'https://www.linkedin.com/in/irfan-ahamed-s-b0a414255/',
   },
-  // {
-  //   image: P5,
-  //   name: 'Sudarsana V',
-  //   year: 'Final Year',
-  //   text: "Hello there! I'm passionate about Frontend Development and Problem Solving using Java. Currently learning the MERN stack for flexible development",
-  //   linkedin: 'https://www.linkedin.com/in/sudarshana-v/',
-  // },
+  {
+    image: P5,
+    name: 'Sudarsana V',
+    year: 'Final Year',
+    text: "Hello there! I'm passionate about Frontend Development and Problem Solving using Java. Currently learning the MERN stack for flexible development",
+    linkedin: 'https://www.linkedin.com/in/sudarshana-v/',
+  },
   {
     image: P6,
     name: 'Siva V',
@@ -54,8 +54,8 @@ const testimonials = [
   },
 ];
 
-const Testimonial = ({ image, name, year, text, linkedin }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6" data-aos="fade-up a animate-bounce">
+const People = ({ image, name, year, text, linkedin }) => (
+  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6"  >
     <img src={image} alt={name} className="w-24 h-24 rounded-full mb-4 object-cover" />
     <p className="text-gray-600 mb-4 text-sm text-center h-24 overflow-hidden">{text}</p>
     <h3 className="font-bold text-lg">{name}</h3>
@@ -69,11 +69,11 @@ const Testimonial = ({ image, name, year, text, linkedin }) => (
 
 const Seniors = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-    });
+    // AOS.init({
+    //   duration: 1000,
+    //   easing: 'ease-out-in',
+    //   once: true,
+    // });
   }, []);
 
   return (
@@ -83,8 +83,8 @@ const Seniors = () => {
         <p className="text-center mb-12 text-gray-600">Here are some aspiring Engineers currently in placements</p>
         <div className="overflow-hidden">
           <div className="flex flex-wrap justify-center">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} {...testimonial} />
+            {fellows.map((guy, index) => (
+              <People key={index} {...guy} />
             ))}
           </div>
         </div>

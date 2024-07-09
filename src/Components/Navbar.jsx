@@ -50,15 +50,16 @@ const Navbar = () => {
   return (
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50 rounded-b-lg font-poppins font-bold">
       <div className="flex items-center space-x-8">
-        <img src={Logo} alt="Logo" className="h-12 w-auto" />
-        <p className="text-yellow-600 text-2xl  p-2 m-29 font-poppins font-bold " >
-          Learn <span className="">H</span>ub
+        <a href="https://datewithdevelopment.vercel.app/">        <img src={Logo} alt="Logo" className="h-12 w-auto" />
+        </a>
+        <p className="bg-black text-white text-2xl  p-2 m-29 font-poppins font-bold " >
+          Learn <span className="text-yellow-600 text-2xl  p-2 m-29 font-poppins font-bold ">Hub</span>
         </p>
       </div>
 
       <div className="lg:hidden">
         <button
-          className="text-white focus:outline-none ;"
+          className="text-white focus:red ;"
           onClick={toggleMenu}
         >
           <FiMenu className="h-6 w-6" />
