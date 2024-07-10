@@ -55,7 +55,7 @@ const fellows = [
 ];
 
 const Guys = ({ image, name, year, text, linkedin }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6" data-aos="fade-up">
+  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center w-full sm:w-80 mx-2 mb-6"  >
     <img src={image} alt={name} className="w-24 h-24 rounded-full mb-4 object-cover" />
     <p className="text-gray-600 mb-4 text-sm text-center h-24 overflow-hidden">{text}</p>
     <h3 className="font-bold text-lg">{name}</h3>
