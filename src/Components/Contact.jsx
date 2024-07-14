@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center min-h-screen ml-10 bg-white text-white p-4">
+    <section className="flex flex-col justify-center items-center min-h-screen ml-10 bg-white text-white p-4" data-aos="fade-up-left">
       <h1 className="bg-black text-white text-center py-4 px-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold rounded-md uppercase tracking-wider shadow-lg mb-6 w-full max-w-lg">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-2xl">
           Feel Free to Ask

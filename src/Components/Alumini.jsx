@@ -77,7 +77,7 @@ const Alumini = () => {
   }, []);
 
   return (
-    <div className="main-content bg-gray-100 min-h-screen lg:ml-40">
+    <div className="main-content bg-gray-100 min-h-screen lg:ml-40 "data-aos="fade-left-up">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Alumini</h1>
         <p className="text-center mb-12 text-gray-600">Hear from our successful graduates about their experiences.</p>

@@ -8,8 +8,7 @@ import P3 from '../assets/Tech/P3.jpg';
 import P4 from '../assets/Tech/P4.jpg';
 import P5 from '../assets/Tech/P5.jpg';
 import P6 from '../assets/Tech/P6.jpg';
-// import '../App.css';
-
+ 
 const testimonials = [
   {
     image: P1,
@@ -78,7 +77,7 @@ const Undergraduate = () => {
   }, []);
 
   return (
-    <div className="main-content bg-gray-100 min-h-screen lg:ml-40">
+    <div className="main-content bg-gray-100 min-h-screen lg:ml-40" data-aos="fade-up">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Life Skills</h1>
         <p className="text-center mb-12 text-gray-600">Have tips and motivation from these YouTubers</p>

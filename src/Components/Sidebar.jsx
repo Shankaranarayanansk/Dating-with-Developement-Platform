@@ -21,6 +21,7 @@ const SidebarContainer = styled.aside`
   transition: all 1s;
   width: ${props => props.isOpen ? '50rem' : '2.5rem'};
   border-right: 9px solid black;
+  z-index: 1;
   overflow-y: auto; /* Enables vertical scrolling */
   
   @media (min-width: 768px) {

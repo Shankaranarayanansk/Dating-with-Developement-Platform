@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaLinkedin } from 'react-icons/fa';
 import P1 from '../assets/Seniors/P1.jpg';
 import P2 from '../assets/Seniors/P2.jpg';
@@ -69,15 +69,15 @@ const People = ({ image, name, year, text, linkedin }) => (
 
 const Seniors = () => {
   useEffect(() => {
-    // AOS.init({
-    //   duration: 1000,
-    //   easing: 'ease-out-in',
-    //   once: true,
-    // });
+    AOS.init({
+      duration: 1500,
+      easing: 'ease-out-in',
+      once: true,
+    });
   }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen lg:ml-40">
+    <div className="bg-gray-100 min-h-screen lg:ml-40 z-10" data-aos="fade-up">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Seniors</h1>
         <p className="text-center mb-12 text-gray-600">Here are some aspiring Engineers currently in placements</p>
