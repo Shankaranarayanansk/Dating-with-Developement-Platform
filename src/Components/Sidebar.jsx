@@ -125,7 +125,7 @@ const Sidebar = ({ children }) => {
           Entrepreneur</NavLink></NavItem>
           <NavItem><NavLink to="/tech" onClick={closeSidebar}><IoIosPeople  className='mr-1 h-5 w-5 inline' />
           Communication</NavLink></NavItem>
-          <NavItem><NavLink to="/tech" onClick={closeSidebar}><FaComputer  className='mr-1 h-5 w-5 inline' />
+          <NavItem><NavLink to="/cs" onClick={closeSidebar}><FaComputer  className='mr-1 h-5 w-5 inline' />
           CS Subjects</NavLink></NavItem>
           
         </NavList>

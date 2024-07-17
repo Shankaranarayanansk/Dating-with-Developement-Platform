@@ -17,6 +17,7 @@ import Blockchain from './Pages/Blockchain';
 import Aptitude from './Pages/Aptitude';
 import Entrepreneur from './Pages/Entrepreneur';
 import Bot from './Components/Bot';
+import CS from './Pages/CS';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
               <Route path="/Aptitude" element={<Aptitude/>} />
               <Route path="/Entrepreneur" element={<Entrepreneur/>} />
               <Route path="/tech" element={<Tech />} />
+              <Route path="/cs" element={<CS />} />
             </Routes>
             <Footer />
             <Bot/>

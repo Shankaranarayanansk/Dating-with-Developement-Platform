@@ -84,11 +84,10 @@ const WebDevelopment = () => {
         const newTimeoutStates = [...timeoutStates];
         newTimeoutStates[index] = true;
         setTimeoutStates(newTimeoutStates);
-      }, 40000) // 10 seconds timeout pannurathuku l
+      }, 2000) // 10 seconds timeout pannurathuku l
     );
 
-    // Clean the loder effect la
-    return () => timers.forEach(timer => clearTimeout(timer));
+     return () => timers.forEach(timer => clearTimeout(timer));
   }, []);
 
   return (
