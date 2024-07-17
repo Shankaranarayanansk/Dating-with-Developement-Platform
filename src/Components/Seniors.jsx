@@ -19,7 +19,7 @@ const fellows = [
   },
   {
     image: P2,
-    name: 'Shankaranarayananask',
+    name: 'Shankaranarayanansk',
     year: 'Final Year',
     text: 'An Aspiring Developer and motivated student, who has mastered the MERN stack bypassing traditional academic routes in favor of hands-on learning',
     linkedin: 'https://www.linkedin.com/in/shankaranarayanansk/',
