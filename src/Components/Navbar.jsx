@@ -22,7 +22,7 @@ const NavLink = styled(Link)`
     background-color: white;
     transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease;
+    transition: transform 1s ease;
   }
 
   &:hover {
@@ -36,8 +36,9 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Navbar = () => {
+const Navbar = (children) => {
   const [isOpen, setIsOpen] = useState(false);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -46,6 +47,7 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+  
 
   return (
     <nav className="bg-black p-1.5 lg:px-12 flex items-center justify-between sticky top-0 z-50 rounded-b-lg font-poppins font-bold">
@@ -105,6 +107,7 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
+    
   );
 };
 
